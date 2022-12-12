@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+Pre Final Assessment
+Yeo Ewe Wen
+20DDT20F1016
+-->
+<html>
+    <head>
+        <title>MHRMS|Registration</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+
+            function verifyInput(){
+                var Name = document.Register.name.value;
+                var IC = document.Register.IC.value;
+                var Address = document.Register.address.value;
+                var Phone = document.Register.phone.value;
+                var Email = document.Register.email.value;
+                var Passport = document.Register.passport.value;
+                var Company_Name = document.Register.c_name.value;
+                var Company_Address = document.Register.c_address.value;
+
+                var num = /^[0-9]+$/;
+
+                if (Name.length === 0){
+                    alert("Please enter your name.");
+                    return false;
+                }
+                if (IC.length !== 12){
+                    alert("Please enter your IC number.");
+                    return false;
+                }
+                if (!IC.match(num)){
+                    alert("Please enter your IC number properly.");
+                    return false;
+                }
+                
+                if (Address.length === 0){
+                    alert("Please enter your address.");
+                    return false;
+                }
+                
+                if (!((Phone.length === 10) || (Phone.length === 11))){
+                    alert("Please enter your phone number.");
+                    return false;
+                }
+                if (!Phone.match(num)){
+                    alert("Please enter your phone number properly.");
+                    return false;
+                }
+                
+                if (Email.length === 0){
+                    alert("Please enter your email.");
+                    return false;
+                }
+                
+                if (Passport.length === 0){
+                    alert("Please enter your passport number.");
+                    return false;
+                }
+                
+                if (Company_Name.length === 0){
+                    alert("Please enter your company name.");
+                    return false;
+                }
+                
+                if (Company_Address.length === 0){
+                    alert("Please enter your company address.");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <a href="index.html">Home</a>
+        <h2>MHRMS|Registration</h2>
+        <form action="Register" name="Register" method="POST">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td> : </td>
+                    <td><input name="name" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Identification Number</td>
+                    <td> : </td>
+                    <td><input name="IC" type="text" maxlength="12"></td>
+                </tr>
+                <tr>
+                    <td>Address<br><br><br><br></td>
+                    <td> : <br><br><br><br></td>
+                    <td><textarea name="address" rows="5" cols="20"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td> : </td>
+                    <td><input type="text" name="phone"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td> : </td>
+                    <td><input type="text" name="email"></td>
+                </tr>
+                <tr>
+                    <td>Passport Number</td>
+                    <td> : </td>
+                    <td><input type="text" name="passport"></td>
+                </tr>
+                <tr>
+                    <td>Company Name</td>
+                    <td> : </td>
+                    <td><input type="text" name="c_name"></td>
+                </tr>
+                <tr>
+                    <td>Company Address<br><br><br><br></td>
+                    <td> : <br><br><br><br></td>
+                    <td><textarea name="c_address" rows="5" cols="20"></textarea></td>
+                </tr>
+                
+                <tr>
+                    <td colspan="3">
+                        <input type="submit" value="Apply" onclick="return(verifyInput())">
+                        <input type="reset" value="Clear">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

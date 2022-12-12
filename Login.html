@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+Pre Final Assessment
+Yeo Ewe Wen
+20DDT20F1016
+-->
+<html>
+    <head>
+        <title>MHRMS|Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function verifyInput(){
+                var username = document.Login.username.value;
+                var password = document.Login.password.value;
+
+                if (username.length === 0){
+                    alert("Please enter your username.");
+                    return false;
+                }
+                if (password.length === 0){
+                    alert("Please enter your password.");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>MHRMS|Login</h2>
+        <form action="Login" name="Login" method="POST">
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td> : </td>
+                    <td><input name="username" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td> : </td>
+                    <td><input name="password" type="password"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input type="submit" value="Login" onclick="return(verifyInput())">
+                        <input type="reset" value="Clear">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

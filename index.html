@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+Pre Final Assessment
+Yeo Ewe Wen
+20DDT20F1016
+-->
+
+<html>
+    <head>
+        <title>MHRMS|Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function verifyInput(){
+                var IC = document.Search.IC.value;
+
+                var num = /^[0-9]+$/;
+
+                if (IC.length !== 12){
+                    alert("Please enter your IC number.");
+                    return false;
+                }
+                if (!IC.match(num)){
+                    alert("Please enter your IC number properly.");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <a href="Login.html">Administrator</a><br>
+        <a href="Registration.html">Register Now</a>
+        <h2>Malaysian Human Resource Management System (MHRMS)</h2>
+        <form action="Search" name="Search" method="POST">
+            <table>
+                <tr>
+                    <td>Identification Number</td>
+                    <td> : </td>
+                    <td><input name="IC" type="text" maxlength="12"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input type="submit" value="Search" onclick="return(verifyInput())">
+                        <input type="reset" value="Clear">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
