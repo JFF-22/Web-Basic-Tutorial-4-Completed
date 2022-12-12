@@ -1,8 +1,4 @@
-<%-- 
-Pre Final Assessment
-Yeo Ewe Wen
-20DDT20F1016
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.DriverManager"%>
